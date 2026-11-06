@@ -1,0 +1,1983 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Instituto Escalada | Educação e Inovação</title>
+  <meta name="description" content="Iniciativa institucional voltada à educação, cultura, desporto e desenvolvimento de educadores em Bauru/SP. Primeiro se escala. Depois, se voa.">
+  
+  <!-- Fontes Google -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,600;0,700;0,800;1,400&family=Work+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --azul-profundo: #0B1D3D;
+      --azul-hover: #162E5B;
+      --dourado: #CE9212;
+      --dourado-hover: #B8800E;
+      --dourado-claro: #F5E8C7;
+      --creme: #F7F5F0;
+      --nevoa: #E7EAF0;
+      --branco: #FFFFFF;
+      --texto-escuro: #1A273D;
+      --texto-mutado: #5D6D82;
+      --borda: #D4DAE5;
+      --sombra-sm: 0 2px 8px rgba(11, 29, 61, 0.05);
+      --sombra-md: 0 8px 24px rgba(11, 29, 61, 0.08);
+      --sombra-lg: 0 16px 36px rgba(11, 29, 61, 0.12);
+      --raio: 16px;
+      --raio-sm: 8px;
+      --raio-pill: 9999px;
+      --transicao: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Work Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background-color: var(--creme);
+      color: var(--texto-escuro);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      color: var(--azul-profundo);
+      line-height: 1.25;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+      transition: var(--transicao);
+    }
+
+    /* BARRA SUPERIOR DE CONSTITUIÇÃO */
+    .top-bar {
+      background-color: var(--azul-profundo);
+      color: var(--branco);
+      padding: 10px 24px;
+      font-size: 0.85rem;
+      border-bottom: 2px solid var(--dourado);
+    }
+
+    .top-bar-content {
+      max-width: 1240px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .tag-status {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background-color: rgba(206, 146, 18, 0.25);
+      color: var(--dourado-claro);
+      border: 1px solid var(--dourado);
+      padding: 3px 12px;
+      border-radius: var(--raio-pill);
+      font-weight: 600;
+      font-size: 0.78rem;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+    }
+
+    .tag-status::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      background-color: var(--dourado);
+      border-radius: 50%;
+      box-shadow: 0 0 8px var(--dourado);
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.4; transform: scale(0.85); }
+    }
+
+    /* HEADER & NAVEGAÇÃO */
+    header {
+      background: rgba(247, 245, 240, 0.95);
+      backdrop-filter: blur(12px);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      border-bottom: 1px solid var(--borda);
+    }
+
+    .nav-container {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 16px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .brand-logo-svg {
+      width: 44px;
+      height: 44px;
+      color: var(--azul-profundo);
+    }
+
+    .brand-text h1 {
+      font-size: 1.25rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--azul-profundo);
+    }
+
+    .brand-text span {
+      display: block;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--dourado);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+    }
+
+    nav a {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--texto-escuro);
+      position: relative;
+    }
+
+    nav a:hover {
+      color: var(--dourado);
+    }
+
+    nav a::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0%;
+      height: 2px;
+      background: var(--dourado);
+      transition: var(--transicao);
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 0.9rem;
+      padding: 12px 24px;
+      border-radius: var(--raio-sm);
+      cursor: pointer;
+      transition: var(--transicao);
+      border: none;
+      outline: none;
+    }
+
+    .btn-primary {
+      background-color: var(--azul-profundo);
+      color: var(--branco);
+      box-shadow: var(--sombra-sm);
+    }
+
+    .btn-primary:hover {
+      background-color: var(--azul-hover);
+      transform: translateY(-2px);
+      box-shadow: var(--sombra-md);
+    }
+
+    .btn-gold {
+      background-color: var(--dourado);
+      color: var(--branco);
+    }
+
+    .btn-gold:hover {
+      background-color: var(--dourado-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 14px rgba(206, 146, 18, 0.35);
+    }
+
+    .btn-outline {
+      background: transparent;
+      border: 2px solid var(--azul-profundo);
+      color: var(--azul-profundo);
+    }
+
+    .btn-outline:hover {
+      background: var(--azul-profundo);
+      color: var(--branco);
+    }
+
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 8px;
+    }
+
+    .mobile-menu-btn svg {
+      width: 28px;
+      height: 28px;
+      stroke: var(--azul-profundo);
+    }
+
+    /* HERO SECTION */
+    .hero {
+      position: relative;
+      padding: 90px 24px 80px;
+      background: linear-gradient(135deg, rgba(231, 234, 240, 0.7) 0%, rgba(247, 245, 240, 1) 100%);
+      border-bottom: 1px solid var(--borda);
+    }
+
+    .hero-container {
+      max-width: 1240px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 48px;
+      align-items: center;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 16px;
+      background: var(--branco);
+      border: 1px solid var(--borda);
+      border-radius: var(--raio-pill);
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--azul-profundo);
+      margin-bottom: 24px;
+      box-shadow: var(--sombra-sm);
+    }
+
+    .hero-title {
+      font-size: 2.85rem;
+      margin-bottom: 20px;
+      letter-spacing: -0.02em;
+    }
+
+    .hero-title span {
+      color: var(--dourado);
+    }
+
+    .hero-slogan {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.35rem;
+      font-style: italic;
+      font-weight: 600;
+      color: var(--dourado);
+      margin-bottom: 18px;
+      letter-spacing: 0.02em;
+    }
+
+    .hero-desc {
+      font-size: 1.12rem;
+      color: var(--texto-mutado);
+      margin-bottom: 32px;
+      max-width: 620px;
+    }
+
+    .hero-cta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .hero-card {
+      background: var(--branco);
+      border: 2px solid var(--borda);
+      border-radius: var(--raio);
+      padding: 32px;
+      box-shadow: var(--sombra-md);
+      position: relative;
+    }
+
+    .hero-card-header {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 20px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--nevoa);
+    }
+
+    .hero-card-icon {
+      width: 48px;
+      height: 48px;
+      color: var(--azul-profundo);
+    }
+
+    .hero-card-stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .stat-box {
+      background: var(--creme);
+      padding: 16px;
+      border-radius: var(--raio-sm);
+      border-left: 4px solid var(--dourado);
+    }
+
+    .stat-number {
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: var(--azul-profundo);
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    .stat-label {
+      font-size: 0.82rem;
+      color: var(--texto-mutado);
+      font-weight: 500;
+    }
+
+    /* SEÇÕES COMUNS */
+    section {
+      padding: 80px 24px;
+    }
+
+    .section-container {
+      max-width: 1240px;
+      margin: 0 auto;
+    }
+
+    .section-header {
+      text-align: center;
+      max-width: 760px;
+      margin: 0 auto 56px;
+    }
+
+    .section-kicker {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 800;
+      color: var(--dourado);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+      display: block;
+    }
+
+    .section-title {
+      font-size: 2.2rem;
+      margin-bottom: 16px;
+    }
+
+    .section-subtitle {
+      font-size: 1.05rem;
+      color: var(--texto-mutado);
+    }
+
+    /* PILARES E PROPÓSITO */
+    .purpose-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 28px;
+    }
+
+    .purpose-card {
+      background: var(--branco);
+      border: 1px solid var(--borda);
+      border-radius: var(--raio);
+      padding: 32px;
+      transition: var(--transicao);
+    }
+
+    .purpose-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--sombra-md);
+      border-color: var(--dourado);
+    }
+
+    .purpose-icon-wrap {
+      width: 56px;
+      height: 56px;
+      background: var(--nevoa);
+      border-radius: var(--raio-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+      color: var(--azul-profundo);
+    }
+
+    .purpose-icon-wrap svg {
+      width: 32px;
+      height: 32px;
+    }
+
+    .purpose-card h3 {
+      font-size: 1.25rem;
+      margin-bottom: 12px;
+    }
+
+    .purpose-card p {
+      color: var(--texto-mutado);
+      font-size: 0.95rem;
+    }
+
+    /* EIXOS INSTITUCIONAIS */
+    .axes-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+      margin-top: 40px;
+    }
+
+    .axis-box {
+      background: var(--branco);
+      border: 2px solid var(--borda);
+      border-radius: var(--raio);
+      padding: 36px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .axis-box::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 6px;
+      height: 100%;
+      background: var(--azul-profundo);
+    }
+
+    .axis-box.axis-social::before {
+      background: var(--dourado);
+    }
+
+    .axis-tag {
+      font-size: 0.75rem;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--dourado);
+      margin-bottom: 8px;
+      display: block;
+    }
+
+    .axis-box h3 {
+      font-size: 1.45rem;
+      margin-bottom: 14px;
+    }
+
+    .axis-box p {
+      color: var(--texto-mutado);
+      font-size: 0.98rem;
+    }
+
+    /* PROGRAMAS DE IMPACTO & FILTROS COM CONTADORES */
+    .filter-container {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 40px;
+    }
+
+    .filter-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 20px;
+      border-radius: var(--raio-pill);
+      background: var(--branco);
+      border: 1px solid var(--borda);
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 0.88rem;
+      color: var(--texto-escuro);
+      cursor: pointer;
+      transition: var(--transicao);
+    }
+
+    .filter-btn:hover {
+      border-color: var(--dourado);
+      background: var(--nevoa);
+    }
+
+    .filter-btn.active {
+      background: var(--azul-profundo);
+      color: var(--branco);
+      border-color: var(--azul-profundo);
+    }
+
+    .filter-count {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 24px;
+      height: 24px;
+      padding: 0 6px;
+      background: var(--nevoa);
+      color: var(--azul-profundo);
+      border-radius: var(--raio-pill);
+      font-size: 0.78rem;
+      font-weight: 800;
+    }
+
+    .filter-btn.active .filter-count {
+      background: var(--dourado);
+      color: var(--branco);
+    }
+
+    .programs-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 28px;
+    }
+
+    .program-card {
+      background: var(--branco);
+      border: 1px solid var(--borda);
+      border-radius: var(--raio);
+      padding: 30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: var(--transicao);
+      box-shadow: var(--sombra-sm);
+    }
+
+    .program-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--sombra-lg);
+      border-color: var(--dourado);
+    }
+
+    .program-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 20px;
+    }
+
+    .program-number {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: var(--dourado);
+      background: var(--dourado-claro);
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .program-category-badge {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 4px 10px;
+      border-radius: var(--raio-pill);
+      background: var(--nevoa);
+      color: var(--texto-mutado);
+    }
+
+    .program-title {
+      font-size: 1.35rem;
+      margin-bottom: 8px;
+    }
+
+    .program-subtitle {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--dourado);
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+
+    .program-desc {
+      font-size: 0.93rem;
+      color: var(--texto-mutado);
+      margin-bottom: 20px;
+      flex-grow: 1;
+    }
+
+    .program-meta {
+      border-top: 1px solid var(--nevoa);
+      padding-top: 16px;
+      margin-top: 16px;
+    }
+
+    .program-meta-item {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.82rem;
+      margin-bottom: 6px;
+    }
+
+    .program-meta-item strong {
+      color: var(--azul-profundo);
+    }
+
+    /* INVESTIMENTO SOCIAL E PARCERIAS */
+    .invest-section {
+      background: var(--nevoa);
+    }
+
+    .matrix-table-wrap {
+      background: var(--branco);
+      border-radius: var(--raio);
+      border: 1px solid var(--borda);
+      box-shadow: var(--sombra-md);
+      overflow-x: auto;
+      margin-bottom: 40px;
+    }
+
+    .matrix-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      min-width: 650px;
+    }
+
+    .matrix-table th {
+      background: var(--azul-profundo);
+      color: var(--branco);
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.88rem;
+      font-weight: 700;
+      padding: 18px 24px;
+      letter-spacing: 0.05em;
+    }
+
+    .matrix-table td {
+      padding: 18px 24px;
+      border-bottom: 1px solid var(--nevoa);
+      font-size: 0.92rem;
+    }
+
+    .matrix-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .matrix-table tr:hover td {
+      background: rgba(231, 234, 240, 0.4);
+    }
+
+    .badge-route {
+      display: inline-block;
+      padding: 4px 10px;
+      background: var(--creme);
+      border: 1px solid var(--dourado);
+      color: var(--azul-profundo);
+      border-radius: var(--raio-pill);
+      font-size: 0.78rem;
+      font-weight: 700;
+    }
+
+    .maturity-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+      margin-top: 36px;
+    }
+
+    .maturity-card {
+      background: var(--branco);
+      border: 1px solid var(--borda);
+      border-radius: var(--raio-sm);
+      padding: 20px;
+    }
+
+    .maturity-step {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 800;
+      font-size: 0.8rem;
+      color: var(--dourado);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 6px;
+    }
+
+    .maturity-card h4 {
+      font-size: 1.05rem;
+      margin-bottom: 8px;
+    }
+
+    .maturity-card p {
+      font-size: 0.85rem;
+      color: var(--texto-mutado);
+    }
+
+    /* WIDGET DE CONSULTA INSTITUCIONAL */
+    .qa-box {
+      background: var(--branco);
+      border: 2px solid var(--azul-profundo);
+      border-radius: var(--raio);
+      padding: 36px;
+      box-shadow: var(--sombra-md);
+      margin-top: 50px;
+    }
+
+    .qa-box h3 {
+      font-size: 1.35rem;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .qa-input-wrap {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 24px;
+      flex-wrap: wrap;
+    }
+
+    .qa-input {
+      flex: 1;
+      min-width: 260px;
+      padding: 14px 20px;
+      border: 1px solid var(--borda);
+      border-radius: var(--raio-sm);
+      font-family: inherit;
+      font-size: 0.95rem;
+      outline: none;
+      transition: var(--transicao);
+    }
+
+    .qa-input:focus {
+      border-color: var(--azul-profundo);
+      box-shadow: 0 0 0 3px rgba(11, 29, 61, 0.1);
+    }
+
+    .qa-suggestions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 20px;
+    }
+
+    .qa-pill {
+      font-size: 0.8rem;
+      background: var(--creme);
+      border: 1px solid var(--borda);
+      padding: 6px 14px;
+      border-radius: var(--raio-pill);
+      cursor: pointer;
+      font-weight: 600;
+      transition: var(--transicao);
+    }
+
+    .qa-pill:hover {
+      background: var(--dourado-claro);
+      border-color: var(--dourado);
+    }
+
+    .qa-answer {
+      background: var(--creme);
+      border-left: 4px solid var(--dourado);
+      padding: 20px;
+      border-radius: 0 var(--raio-sm) var(--raio-sm) 0;
+      font-size: 0.95rem;
+      color: var(--texto-escuro);
+      display: none;
+    }
+
+    /* FORMULÁRIO DE CONTACTO */
+    .contact-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: flex-start;
+    }
+
+    .contact-info-card {
+      background: var(--azul-profundo);
+      color: var(--branco);
+      border-radius: var(--raio);
+      padding: 40px;
+    }
+
+    .contact-info-card h3 {
+      color: var(--branco);
+      font-size: 1.6rem;
+      margin-bottom: 16px;
+    }
+
+    .contact-info-card p {
+      color: var(--nevoa);
+      margin-bottom: 28px;
+      font-size: 0.98rem;
+    }
+
+    .info-list {
+      list-style: none;
+      margin-bottom: 32px;
+    }
+
+    .info-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      margin-bottom: 20px;
+    }
+
+    .info-item svg {
+      width: 24px;
+      height: 24px;
+      color: var(--dourado);
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .info-item div strong {
+      display: block;
+      color: var(--branco);
+      font-size: 0.95rem;
+    }
+
+    .info-item div span {
+      color: var(--nevoa);
+      font-size: 0.88rem;
+    }
+
+    .form-card {
+      background: var(--branco);
+      border: 1px solid var(--borda);
+      border-radius: var(--raio);
+      padding: 40px;
+      box-shadow: var(--sombra-md);
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-label {
+      display: block;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--azul-profundo);
+      margin-bottom: 8px;
+    }
+
+    .form-control {
+      width: 100%;
+      padding: 12px 16px;
+      border: 1px solid var(--borda);
+      border-radius: var(--raio-sm);
+      font-family: inherit;
+      font-size: 0.95rem;
+      outline: none;
+      transition: var(--transicao);
+    }
+
+    .form-control:focus {
+      border-color: var(--azul-profundo);
+      box-shadow: 0 0 0 3px rgba(11, 29, 61, 0.1);
+    }
+
+    textarea.form-control {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    /* MODAL */
+    .modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(11, 29, 61, 0.7);
+      backdrop-filter: blur(6px);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 2000;
+      padding: 20px;
+    }
+
+    .modal-container {
+      background: var(--branco);
+      border-radius: var(--raio);
+      max-width: 680px;
+      width: 100%;
+      max-height: 90vh;
+      overflow-y: auto;
+      box-shadow: var(--sombra-lg);
+      border: 2px solid var(--dourado);
+      position: relative;
+    }
+
+    .modal-header {
+      padding: 24px;
+      border-bottom: 1px solid var(--borda);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      background: var(--branco);
+      z-index: 10;
+    }
+
+    .modal-close-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--nevoa);
+      border: none;
+      padding: 6px 14px;
+      border-radius: var(--raio-pill);
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 0.8rem;
+      color: var(--azul-profundo);
+      cursor: pointer;
+      transition: var(--transicao);
+    }
+
+    .modal-close-btn:hover {
+      background: var(--dourado-claro);
+      color: var(--dourado-hover);
+    }
+
+    .modal-body {
+      padding: 28px 24px;
+    }
+
+    .modal-tabs {
+      display: flex;
+      gap: 8px;
+      border-bottom: 2px solid var(--nevoa);
+      margin-bottom: 20px;
+    }
+
+    .modal-tab-btn {
+      background: none;
+      border: none;
+      padding: 10px 16px;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 0.85rem;
+      color: var(--texto-mutado);
+      cursor: pointer;
+      position: relative;
+    }
+
+    .modal-tab-btn.active {
+      color: var(--azul-profundo);
+    }
+
+    .modal-tab-btn.active::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: var(--dourado);
+    }
+
+    .modal-tab-content {
+      display: none;
+      font-size: 0.95rem;
+      line-height: 1.7;
+      color: var(--texto-escuro);
+    }
+
+    .modal-tab-content.active {
+      display: block;
+    }
+
+    /* RODAPÉ */
+    footer {
+      background-color: var(--azul-profundo);
+      color: var(--nevoa);
+      padding: 70px 24px 30px;
+      border-top: 4px solid var(--dourado);
+    }
+
+    .footer-grid {
+      max-width: 1240px;
+      margin: 0 auto 50px;
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
+      gap: 40px;
+    }
+
+    .footer-col h4 {
+      color: var(--branco);
+      font-size: 1.1rem;
+      margin-bottom: 20px;
+      position: relative;
+      padding-bottom: 8px;
+    }
+
+    .footer-col h4::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 32px;
+      height: 2px;
+      background: var(--dourado);
+    }
+
+    .footer-links {
+      list-style: none;
+    }
+
+    .footer-links li {
+      margin-bottom: 10px;
+    }
+
+    .footer-links a {
+      color: var(--nevoa);
+      font-size: 0.9rem;
+    }
+
+    .footer-links a:hover {
+      color: var(--dourado);
+      padding-left: 4px;
+    }
+
+    .footer-notice {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 24px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: var(--raio-sm);
+      font-size: 0.82rem;
+      line-height: 1.6;
+      color: #A0B0C8;
+    }
+
+    .footer-notice strong {
+      color: var(--dourado-claro);
+    }
+
+    .footer-bottom {
+      max-width: 1240px;
+      margin: 30px auto 0;
+      padding-top: 24px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+      font-size: 0.82rem;
+      color: #7D8FA6;
+    }
+
+    /* RESPONSIVIDADE */
+    @media (max-width: 992px) {
+      .hero-container {
+        grid-template-columns: 1fr;
+      }
+      .axes-container {
+        grid-template-columns: 1fr;
+      }
+      .contact-container {
+        grid-template-columns: 1fr;
+      }
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        display: none;
+      }
+      .mobile-menu-btn {
+        display: block;
+      }
+      .hero-title {
+        font-size: 2.2rem;
+      }
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- BARRA SUPERIOR DE SITUAÇÃO INSTITUCIONAL -->
+  <div class="top-bar">
+    <div class="top-bar-content">
+      <div style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap;">
+        <span class="tag-status">Em processo de constituição</span>
+        <span>Sede informada em <strong>Bauru/SP</strong></span>
+      </div>
+      <div>
+        <span>Documento institucional preliminar de estruturação</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- CABEÇALHO PRINCIPAL -->
+  <header>
+    <div class="nav-container">
+      <a href="#" class="brand">
+        <!-- Ícone em Espiral de 5 braços com núcleo -->
+        <svg class="brand-logo-svg" viewBox="0 0 100 100" fill="currentColor">
+          <circle cx="50" cy="50" r="10" fill="currentColor"/>
+          <path d="M50 15 C65 15, 78 28, 78 45 C78 40, 72 32, 60 30 C48 28, 42 35, 38 42 C40 30, 42 15, 50 15 Z"/>
+          <path d="M83 40 C92 53, 90 70, 78 81 C75 76, 73 68, 64 61 C55 54, 46 56, 39 62 C48 54, 58 43, 83 40 Z"/>
+          <path d="M72 85 C61 94, 44 94, 32 84 C36 81, 41 75, 41 64 C41 53, 34 46, 27 42 C33 52, 38 68, 72 85 Z"/>
+          <path d="M25 78 C15 67, 14 50, 22 37 C24 42, 28 49, 36 53 C44 57, 52 52, 57 44 C49 50, 36 57, 25 78 Z"/>
+          <path d="M19 33 C26 21, 42 16, 56 22 C51 25, 46 29, 44 40 C42 51, 48 60, 56 66 C48 60, 34 50, 19 33 Z"/>
+        </svg>
+        <div class="brand-text">
+          <h1>Instituto Escalada</h1>
+          <span>Educação e Inovação</span>
+        </div>
+      </a>
+
+      <nav id="mainNav">
+        <a href="#institucional">O Instituto</a>
+        <a href="#eixos">Eixos</a>
+        <a href="#programas">Programas</a>
+        <a href="#investimento">Investimento Social</a>
+        <a href="#governanca">Governança</a>
+        <a href="#contacto" class="btn btn-gold" style="color:#FFF;">Seja Parceiro</a>
+      </nav>
+
+      <button class="mobile-menu-btn" id="menuToggle" aria-label="Abrir Menu">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <div class="hero-container">
+      <div>
+        <div class="hero-badge">
+          <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+          </svg>
+          Sede em Bauru / SP · Em processo de constituição
+        </div>
+        <h2 class="hero-title">Uma oportunidade pode mudar uma <span>trajetória</span>.</h2>
+        <p class="hero-slogan">“Primeiro se escala. Depois, se voa.”</p>
+        <p class="hero-desc">
+          Articulamos soluções educacionais, inovação, cultura, desporto e qualificação continuada de educadores para ampliar horizontes e transformar realidades em comunidades vulneráveis.
+        </p>
+        <div class="hero-cta">
+          <a href="#programas" class="btn btn-primary">Conheça as 4 Trilhas</a>
+          <a href="#investimento" class="btn btn-outline">Área para Investidores</a>
+        </div>
+      </div>
+
+      <div class="hero-card">
+        <div class="hero-card-header">
+          <svg class="hero-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="3" width="20" height="14" rx="3" ry="3"/>
+            <path d="M7 11l3-3 3 3 4-4"/>
+            <line x1="8" y1="21" x2="16" y2="21"/>
+            <line x1="12" y1="17" x2="12" y2="21"/>
+          </svg>
+          <div>
+            <h4 style="font-size: 1.1rem; color: var(--azul-profundo);">Portfólio Estratégico</h4>
+            <span style="font-size: 0.85rem; color: var(--texto-mutado);">Modelo de Impacto Social</span>
+          </div>
+        </div>
+        <div class="hero-card-stats">
+          <div class="stat-box">
+            <div class="stat-number">04</div>
+            <div class="stat-label">Trilhas de Impacto</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-number">02</div>
+            <div class="stat-label">Grandes Eixos</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-number">100%</div>
+            <div class="stat-label">Foco em Desenvolvimento</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-number">Bauru</div>
+            <div class="stat-label">Município de Referência</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- O INSTITUTO & PRINCÍPIOS -->
+  <section id="institucional">
+    <div class="section-container">
+      <div class="section-header">
+        <span class="section-kicker">Identidade e Propósito</span>
+        <h2 class="section-title">Construir percursos para transformar realidades</h2>
+        <p class="section-subtitle">
+          Cada pessoa tem um ponto de partida, mas o seu potencial nunca deve ser limitado pelas condições iniciais da sua trajetória.
+        </p>
+      </div>
+
+      <div class="purpose-grid">
+        <div class="purpose-card">
+          <div class="purpose-icon-wrap">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+            </svg>
+          </div>
+          <h3>Educação Transformadora</h3>
+          <p>A educação entendida como a ferramenta mais consistente para construir autonomia, pensamento crítico e novas oportunidades de vida.</p>
+        </div>
+
+        <div class="purpose-card">
+          <div class="purpose-icon-wrap">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"/>
+              <line x1="12" y1="8" x2="12" y2="12"/>
+              <line x1="12" y1="16" x2="12.01" y2="16"/>
+            </svg>
+          </div>
+          <h3>Inovação com Propósito</h3>
+          <p>Metodologias práticas aplicadas aos desafios concretos enfrentados pelas escolas e comunidades em situação de vulnerabilidade.</p>
+        </div>
+
+        <div class="purpose-card">
+          <div class="purpose-icon-wrap">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+              <circle cx="9" cy="7" r="4"/>
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+              <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+            </svg>
+          </div>
+          <h3>Desenvolvimento Humano Integral</h3>
+          <p>Articulação integrada entre conhecimento cognitivo, vivência cultural, desporto e fortalecimento socioemocional.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EIXOS DE ATUAÇÃO -->
+  <section id="eixos" style="background: var(--branco);">
+    <div class="section-container">
+      <div class="section-header">
+        <span class="section-kicker">Arquitetura de Atuação</span>
+        <h2 class="section-title">Dois grandes eixos articulados</h2>
+        <p class="section-subtitle">
+          Separamos a formação ampla do portfólio de projetos sociais para garantir rigor técnico e gestão transparente.
+        </p>
+      </div>
+
+      <div class="axes-container">
+        <div class="axis-box">
+          <span class="axis-tag">Eixo I</span>
+          <h3>Formação e Desenvolvimento Educacional</h3>
+          <p>
+            Desenvolvimento de soluções pedagógicas, orientação de trajetórias, capacitação técnica e inovação orientada para instituições de ensino, educadores, famílias e redes parceiras.
+          </p>
+        </div>
+
+        <div class="axis-box axis-social">
+          <span class="axis-tag">Eixo II</span>
+          <h3>Impacto e Transformação Social</h3>
+          <p>
+            Desenvolvimento de iniciativas socioeducativas voltadas prioritariamente a crianças, adolescentes e educadores em contextos de vulnerabilidade, desdobrando-se em 4 trilhas estruturadas.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROGRAMAS DE IMPACTO -->
+  <section id="programas">
+    <div class="section-container">
+      <div class="section-header">
+        <span class="section-kicker">Portfólio em Estruturação</span>
+        <h2 class="section-title">As Quatro Trilhas de Impacto</h2>
+        <p class="section-subtitle">
+          Iniciativas concebidas para atuar em rede e multiplicar resultados sustentáveis.
+        </p>
+      </div>
+
+      <!-- FILTROS COM CONTADORES (Padrão visual AITOPIA) -->
+      <div class="filter-container">
+        <button class="filter-btn active" data-filter="all">Todos <span class="filter-count">4</span></button>
+        <button class="filter-btn" data-filter="educacao">Educação <span class="filter-count">1</span></button>
+        <button class="filter-btn" data-filter="cultura">Cultura <span class="filter-count">1</span></button>
+        <button class="filter-btn" data-filter="esporte">Desporto e Lazer <span class="filter-count">1</span></button>
+        <button class="filter-btn" data-filter="educadores">Educadores <span class="filter-count">1</span></button>
+      </div>
+
+      <div class="programs-grid">
+        <!-- TRILHA 1 -->
+        <div class="program-card" data-category="educacao">
+          <div>
+            <div class="program-header">
+              <span class="program-number">01</span>
+              <span class="program-category-badge">Educação</span>
+            </div>
+            <h3 class="program-title">Primeira Subida</h3>
+            <p class="program-subtitle">Educação e Orientação de Trajetória</p>
+            <p class="program-desc">
+              Reforço escolar e orientação no contraturno para jovens de 12 a 17 anos em vulnerabilidade, aliando mentoria e permanência escolar.
+            </p>
+          </div>
+          <div>
+            <div class="program-meta">
+              <div class="program-meta-item">
+                <span>Público:</span>
+                <strong>12 a 17 anos</strong>
+              </div>
+              <div class="program-meta-item">
+                <span>Rota Prevista:</span>
+                <strong style="color:var(--dourado);">FIA / CMDCA Bauru</strong>
+              </div>
+            </div>
+            <button class="btn btn-outline" style="width: 100%; margin-top: 16px;" onclick="openProgramModal('primeira-subida')">Ver Ficha Técnica</button>
+          </div>
+        </div>
+
+        <!-- TRILHA 2 -->
+        <div class="program-card" data-category="cultura">
+          <div>
+            <div class="program-header">
+              <span class="program-number">02</span>
+              <span class="program-category-badge">Cultura</span>
+            </div>
+            <h3 class="program-title">Expedição Criativa</h3>
+            <p class="program-subtitle">Expressão, Arte e Repertório</p>
+            <p class="program-desc">
+              Oficinas de artes visuais, música e audiovisual para ampliação do repertório cultural, estímulo à autoestima e protagonismo juvenil.
+            </p>
+          </div>
+          <div>
+            <div class="program-meta">
+              <div class="program-meta-item">
+                <span>Público:</span>
+                <strong>Jovens e Comunidades</strong>
+              </div>
+              <div class="program-meta-item">
+                <span>Rota Prevista:</span>
+                <strong style="color:var(--dourado);">PEC Bauru / Lei Rouanet</strong>
+              </div>
+            </div>
+            <button class="btn btn-outline" style="width: 100%; margin-top: 16px;" onclick="openProgramModal('expedicao-criativa')">Ver Ficha Técnica</button>
+          </div>
+        </div>
+
+        <!-- TRILHA 3 -->
+        <div class="program-card" data-category="esporte">
+          <div>
+            <div class="program-header">
+              <span class="program-number">03</span>
+              <span class="program-category-badge">Desporto e Lazer</span>
+            </div>
+            <h3 class="program-title">Base de Acampamento</h3>
+            <p class="program-subtitle">Convivência, Desporto e Disciplina</p>
+            <p class="program-desc">
+              Atividades recreativas e desportivas estruturadas que desenvolvem o espírito de cooperação, respeito mútuo e competências socioemocionais.
+            </p>
+          </div>
+          <div>
+            <div class="program-meta">
+              <div class="program-meta-item">
+                <span>Público:</span>
+                <strong>Crianças e Jovens</strong>
+              </div>
+              <div class="program-meta-item">
+                <span>Rota Prevista:</span>
+                <strong style="color:var(--dourado);">Incentivo ao Esporte / Patrocínio</strong>
+              </div>
+            </div>
+            <button class="btn btn-outline" style="width: 100%; margin-top: 16px;" onclick="openProgramModal('base-acampamento')">Ver Ficha Técnica</button>
+          </div>
+        </div>
+
+        <!-- TRILHA 4 -->
+        <div class="program-card" data-category="educadores">
+          <div>
+            <div class="program-header">
+              <span class="program-number">04</span>
+              <span class="program-category-badge">Educadores</span>
+            </div>
+            <h3 class="program-title">Guias de Trilha</h3>
+            <p class="program-subtitle">Capacitação Contínua de Docentes</p>
+            <p class="program-desc">
+              Formação de professores e educadores sociais das trilhas anteriores, multiplicando o impacto pedagógico nas escolas e organizações.
+            </p>
+          </div>
+          <div>
+            <div class="program-meta">
+              <div class="program-meta-item">
+                <span>Público:</span>
+                <strong>Professores e Educadores</strong>
+              </div>
+              <div class="program-meta-item">
+                <span>Rota Prevista:</span>
+                <strong style="color:var(--dourado);">Investimento Social / CSR</strong>
+              </div>
+            </div>
+            <button class="btn btn-outline" style="width: 100%; margin-top: 16px;" onclick="openProgramModal('guias-trilha')">Ver Ficha Técnica</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INVESTIMENTO SOCIAL & EMPRESAS (ESG) -->
+  <section id="investimento" class="invest-section">
+    <div class="section-container">
+      <div class="section-header">
+        <span class="section-kicker">Investimento Social Privado & ESG</span>
+        <h2 class="section-title">Invista em Transformação</h2>
+        <p class="section-subtitle">
+          Construímos pontes entre empresas com propósito e iniciativas estruturadas com rigor, metas e integridade.
+        </p>
+      </div>
+
+      <!-- TABELA MATRIZ DE CAPTAÇÃO -->
+      <div class="matrix-table-wrap">
+        <table class="matrix-table">
+          <thead>
+            <tr>
+              <th>Programa</th>
+              <th>Público Alvo</th>
+              <th>Mecanismo Pretendido</th>
+              <th>Observação Técnica</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>01 · Primeira Subida</strong></td>
+              <td>Jovens 12–17 anos</td>
+              <td><span class="badge-route">FIA / CMDCA</span></td>
+              <td>Depende de inscrição no CMDCA de Bauru após regularização jurídica</td>
+            </tr>
+            <tr>
+              <td><strong>02 · Expedição Criativa</strong></td>
+              <td>Crianças, Jovens e Comunidade</td>
+              <td><span class="badge-route">PEC Bauru / Rouanet</span></td>
+              <td>Enquadramento em editais municipais de Bauru e leis federais</td>
+            </tr>
+            <tr>
+              <td><strong>03 · Base de Acampamento</strong></td>
+              <td>Crianças e Adolescentes</td>
+              <td><span class="badge-route">Incentivo ao Esporte</span></td>
+              <td>Adesão às normas do Ministério do Esporte ou patrocínio direto</td>
+            </tr>
+            <tr>
+              <td><strong>04 · Guias de Trilha</strong></td>
+              <td>Educadores e Professores</td>
+              <td><span class="badge-route">Doação Direta / CSR</span></td>
+              <td>Aporte direto de responsabilidade corporativa (sustentabilidade do ecossistema)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- RÉGUA DE MATURIDADE -->
+      <h3 style="font-size: 1.35rem; margin-bottom: 8px;">Níveis de Maturidade e Transparência</h3>
+      <p style="color: var(--texto-mutado); font-size: 0.95rem; margin-bottom: 24px;">
+        Para segurança dos investidores, cada projeto do Instituto é classificado publicamente segundo seu estágio formal:
+      </p>
+
+      <div class="maturity-grid">
+        <div class="maturity-card" style="border-top: 4px solid var(--dourado);">
+          <div class="maturity-step">Fase Atual</div>
+          <h4>1. Em Estruturação</h4>
+          <p>Definição de objetivos, metodologias, público e fichas técnicas preliminares.</p>
+        </div>
+        <div class="maturity-card">
+          <div class="maturity-step">Fase 2</div>
+          <h4>2. Em Elaboração</h4>
+          <p>Planos de trabalho, orçamentos e submissão aos editais ou conselhos municipais.</p>
+        </div>
+        <div class="maturity-card">
+          <div class="maturity-step">Fase 3</div>
+          <h4>3. Apto a Captar</h4>
+          <p>Projetos aprovados e publicados em Diário Oficial prontos para dedução fiscal.</p>
+        </div>
+        <div class="maturity-card">
+          <div class="maturity-step">Fase 4</div>
+          <h4>4. Em Execução</h4>
+          <p>Atividades ativas em campo com acompanhamento de metas e auditoria de impacto.</p>
+        </div>
+      </div>
+
+      <!-- WIDGET DE CONSULTA INSTITUCIONAL (Inspirado no AITOPIA) -->
+      <div class="qa-box">
+        <h3>
+          <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+          </svg>
+          Perguntas Frequentes & Consulta Rápida
+        </h3>
+        <p style="color: var(--texto-mutado); font-size: 0.92rem; margin-bottom: 16px;">
+          Clique num dos tópicos ou digite sua pergunta sobre a governança e o funcionamento institucional:
+        </p>
+
+        <div class="qa-suggestions">
+          <span class="qa-pill" onclick="setQuestion('Qual é a situação jurídica atual do Instituto?')">Situação Jurídica</span>
+          <span class="qa-pill" onclick="setQuestion('Onde fica a sede em Bauru/SP?')">Sede em Bauru</span>
+          <span class="qa-pill" onclick="setQuestion('Como as empresas podem apoiar?')">Apoio Empresarial</span>
+          <span class="qa-pill" onclick="setQuestion('Quais são as 4 trilhas de impacto?')">As 4 Trilhas</span>
+          <span class="qa-pill" onclick="setQuestion('O edital PEC de Bauru está aberto?')">Edital PEC Bauru</span>
+        </div>
+
+        <div class="qa-input-wrap">
+          <input type="text" id="qaInput" class="qa-input" placeholder="Pergunte-me qualquer coisa sobre o Instituto...">
+          <button class="btn btn-primary" onclick="searchAnswer()">Consultar</button>
+        </div>
+
+        <div id="qaAnswer" class="qa-answer"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GOVERNANÇA E FORMALIZAÇÃO -->
+  <section id="governanca" style="background: var(--branco);">
+    <div class="section-container">
+      <div class="section-header">
+        <span class="section-kicker">Responsabilidade e Integridade</span>
+        <h2 class="section-title">Governança Institucional</h2>
+        <p class="section-subtitle">
+          A credibilidade de uma instituição constrói-se na clareza dos seus processos e na proteção dos seus beneficiários.
+        </p>
+      </div>
+
+      <div class="purpose-grid">
+        <div class="purpose-card">
+          <div class="purpose-icon-wrap">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+            </svg>
+          </div>
+          <h3>Salvaguarda do ECA</h3>
+          <p>Compromisso irrevogável com o Estatuto da Criança e do Adolescente em todas as atividades, instalações e contratações de profissionais.</p>
+        </div>
+
+        <div class="purpose-card">
+          <div class="purpose-icon-wrap">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/>
+            </svg>
+          </div>
+          <h3>Prestação de Contas Rigorosa</h3>
+          <p>Conselho Fiscal autônomo, relatórios periódicos de execução e separação completa entre contas de projetos e custos operacionais.</p>
+        </div>
+
+        <div class="purpose-card">
+          <div class="purpose-icon-wrap">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
+            </svg>
+          </div>
+          <h3>Articulação em Bauru</h3>
+          <p>Relação transparente com a sociedade civil de Bauru, conselhos municipais (CMDCA), poder público e redes de ensino parceiras.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FORMULÁRIO DE CONTACTO / PARCERIAS -->
+  <section id="contacto" style="background: var(--creme);">
+    <div class="section-container">
+      <div class="contact-container">
+        <div class="contact-info-card">
+          <h3>Vamos construir este caminho juntos</h3>
+          <p>
+            Estamos a estruturar relações de cooperação com empresas, escolas, organizações sociais e pessoas que acreditam no poder da educação.
+          </p>
+
+          <ul class="info-list">
+            <li class="info-item">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+              </svg>
+              <div>
+                <strong>Sede Informada:</strong>
+                <span>Rua Fuas de Mattos Sabino, nº 9-42, 2º andar<br>Jardim América — Bauru/SP · CEP 17017-332</span>
+              </div>
+            </li>
+            <li class="info-item">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+              </svg>
+              <div>
+                <strong>Canal Institucional:</strong>
+                <span>contacto@institutoescalada.org.br</span>
+              </div>
+            </li>
+            <li class="info-item">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+              </svg>
+              <div>
+                <strong>Situação Atual:</strong>
+                <span>Iniciativa em processo de constituição jurídica</span>
+              </div>
+            </li>
+          </ul>
+
+          <div style="padding: 16px; background: rgba(255,255,255,0.08); border-radius: var(--raio-sm); border-left: 3px solid var(--dourado);">
+            <em style="font-size: 0.88rem; color: var(--dourado-claro);">“Primeiro se escala. Depois, se voa.”</em>
+          </div>
+        </div>
+
+        <div class="form-card">
+          <h3 style="font-size: 1.45rem; margin-bottom: 8px;">Manifestação de Interesse</h3>
+          <p style="color: var(--texto-mutado); font-size: 0.9rem; margin-bottom: 24px;">
+            Preencha os campos abaixo para iniciarmos um diálogo institucional ou técnico.
+          </p>
+
+          <form id="contactForm" onsubmit="handleFormSubmit(event)">
+            <div class="form-group">
+              <label class="form-label" for="formName">Nome Completo *</label>
+              <input type="text" id="formName" class="form-control" required placeholder="Seu nome">
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="formOrg">Empresa ou Organização</label>
+              <input type="text" id="formOrg" class="form-control" placeholder="Nome da empresa ou entidade">
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="formEmail">E-mail Profissional *</label>
+              <input type="email" id="formEmail" class="form-control" required placeholder="seu.email@exemplo.com">
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="formInterest">Área ou Trilha de Interesse *</label>
+              <select id="formInterest" class="form-control" required>
+                <option value="">Selecione uma opção...</option>
+                <option value="primeira-subida">01 · Trilha Primeira Subida (Educação)</option>
+                <option value="expedicao-criativa">02 · Trilha Expedição Criativa (Cultura)</option>
+                <option value="base-acampamento">03 · Trilha Base de Acampamento (Desporto/Lazer)</option>
+                <option value="guias-trilha">04 · Trilha Guias de Trilha (Formação de Educadores)</option>
+                <option value="investimento-esg">Investimento Social Privado & ESG</option>
+                <option value="espaco-voluntariado">Cessão de Espaço ou Voluntariado</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="formMessage">Mensagem / Proposta</label>
+              <textarea id="formMessage" class="form-control" placeholder="Conte-nos como gostaria de colaborar..."></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-gold" style="width: 100%; color:#FFF;">Enviar Manifestação</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MODAL DE DETALHES DO PROGRAMA -->
+  <div class="modal-overlay" id="programModal">
+    <div class="modal-container">
+      <div class="modal-header">
+        <h3 id="modalTitle" style="font-size: 1.3rem;">Ficha Técnica do Programa</h3>
+        <button class="modal-close-btn" onclick="closeModal()">
+          ✕ Fechar
+        </button>
+      </div>
+
+      <div class="modal-body">
+        <div class="modal-tabs">
+          <button class="modal-tab-btn active" onclick="switchTab('visao')">Visão Geral</button>
+          <button class="modal-tab-btn" onclick="switchTab('metodologia')">Metodologia</button>
+          <button class="modal-tab-btn" onclick="switchTab('indicadores')">Indicadores</button>
+          <button class="modal-tab-btn" onclick="switchTab('fomento')">Rota de Fomento</button>
+        </div>
+
+        <div id="tab-visao" class="modal-tab-content active"></div>
+        <div id="tab-metodologia" class="modal-tab-content"></div>
+        <div id="tab-indicadores" class="modal-tab-content"></div>
+        <div id="tab-fomento" class="modal-tab-content"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- RODAPÉ INSTITUCIONAL -->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4>Instituto Escalada</h4>
+        <p style="font-size: 0.9rem; line-height: 1.6; margin-bottom: 16px;">
+          Educação, formação integral e desenvolvimento humano como motores de emancipação social.
+        </p>
+        <p style="font-family:'Montserrat'; font-size:0.95rem; font-style:italic; color:var(--dourado);">
+          “Primeiro se escala. Depois, se voa.”
+        </p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Navegação</h4>
+        <ul class="footer-links">
+          <li><a href="#institucional">O Instituto</a></li>
+          <li><a href="#eixos">Eixos de Atuação</a></li>
+          <li><a href="#programas">As Quatro Trilhas</a></li>
+          <li><a href="#investimento">Área para Investidores</a></li>
+          <li><a href="#governanca">Governança & Integridade</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Programas</h4>
+        <ul class="footer-links">
+          <li><a href="#programas">01. Primeira Subida</a></li>
+          <li><a href="#programas">02. Expedição Criativa</a></li>
+          <li><a href="#programas">03. Base de Acampamento</a></li>
+          <li><a href="#programas">04. Guias de Trilha</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Sede Informada</h4>
+        <p style="font-size: 0.88rem; line-height: 1.6; margin-bottom: 10px;">
+          Rua Fuas de Mattos Sabino, nº 9-42, 2º andar<br>
+          Jardim América — Bauru/SP<br>
+          CEP 17017-332
+        </p>
+        <p style="font-size: 0.82rem; color: #A0B0C8;">
+          Região Centro-Oeste Paulista
+        </p>
+      </div>
+    </div>
+
+    <!-- NOTA DE TRANSPARÊNCIA INSTITUCIONAL -->
+    <div class="footer-notice">
+      <strong>NOTA INSTITUCIONAL DE TRANSPARÊNCIA:</strong>
+      Este portal é um canal preliminar de apresentação e estruturação institucional. Na data atual, o Instituto Escalada Educação e Inovação encontra-se formalmente em processo de constituição, sem personalidade jurídica própria ou CNPJ ativo. Os projetos descritos representam propostas em estruturação e a menção a mecanismos de incentivo fiscal (FIA, CMDCA, PEC Bauru, Rouanet e Lei de Incentivo ao Esporte) constitui rota potencial de planejamento, não presumindo aprovação prévia, cadastramento concluído ou autorização antecipada de captação de recursos públicos.
+    </div>
+
+    <div class="footer-bottom">
+      <div>© 2026 Instituto Escalada Educação e Inovação. Todos os direitos reservados.</div>
+      <div>Bauru/SP · Brasil</div>
+    </div>
+  </footer>
+
+  <script>
+    // DADOS DAS FICHAS TÉCNICAS DOS PROGRAMAS
+    const programData = {
+      'primeira-subida': {
+        title: '01 · Primeira Subida: Educação e Trajetória',
+        visao: '<p><strong>Público Prioritário:</strong> Adolescentes de 12 a 17 anos em situação de vulnerabilidade socioeconômica.</p><p style="margin-top:12px;"><strong>Objetivo Central:</strong> Oferecer suporte educacional no contraturno e mentoria para evitar o abandono escolar e fomentar projetos de futuro autônomos.</p>',
+        metodologia: '<ul style="padding-left:20px; margin-top:10px;"><li>Reforço escolar focado em literacia e numeracia.</li><li>Acompanhamento de assiduidade e rendimento nas escolas da rede pública de Bauru.</li><li>Mentoria individualizada com educadores e profissionais voluntários.</li><li>Workshops de projeto de vida e orientação vocacional.</li></ul>',
+        indicadores: '<ul style="padding-left:20px; margin-top:10px;"><li>Taxa de permanência e redução da evasão escolar dos participantes.</li><li>Evolução do rendimento pedagógico semestral.</li><li>Frequência nas atividades no contraturno.</li><li>Avaliação qualitativa do plano de trajetória de cada jovem.</li></ul>',
+        fomento: '<p><strong>Rota de Fomento:</strong> Avaliação de submissão ao <strong>Fundo Municipal dos Direitos da Criança e do Adolescente (FIA)</strong> de Bauru/SP.</p><p style="margin-top:10px;"><em>Condicionantes:</em> Conclusão da constituição jurídica, registro da associação e do programa junto do <strong>CMDCA Bauru</strong> conforme o estatuto e as resoluções vigentes.</p>'
+      },
+      'expedicao-criativa': {
+        title: '02 · Expedição Criativa: Cultura e Repertório',
+        visao: '<p><strong>Público Prioritário:</strong> Crianças, jovens e famílias de territórios vulneráveis.</p><p style="margin-top:12px;"><strong>Objetivo Central:</strong> Democratizar o acesso a manifestações artísticas e culturais como ferramenta de ampliação de visão de mundo, autoestima e expressão coletiva.</p>',
+        metodologia: '<ul style="padding-left:20px; margin-top:10px;"><li>Oficinas práticas de artes visuais, fotografia e produção audiovisual comunitária.</li><li>Iniciação musical, ritmo e apreciação de repertório brasileiro.</li><li>Visitas mediadas a equipamentos culturais e exposições.</li><li>Mostras artísticas finais com participação das famílias.</li></ul>',
+        indicadores: '<ul style="padding-left:20px; margin-top:10px;"><li>Número de obras, vídeos e apresentações produzidas pelos participantes.</li><li>Índice de assiduidade e engajamento nas oficinas.</li><li>Pesquisa de autopercepção, convivência e autoestima juvenil.</li></ul>',
+        fomento: '<p><strong>Rota de Fomento:</strong> Editais municipais como o <strong>Programa Municipal de Estímulo à Cultura (PEC) de Bauru</strong> e <strong>Lei Rouanet</strong> (PRONAC).</p><p style="margin-top:10px;"><em>Observação:</em> O edital do PEC Bauru de 2026 serviu de referência de planejamento, preparando a submissão para editais futuros após a obtenção de CNPJ com CNAE cultural adequado.</p>'
+      },
+      'base-acampamento': {
+        title: '03 · Base de Acampamento: Desporto e Convivência',
+        visao: '<p><strong>Público Prioritário:</strong> Crianças e adolescentes participantes das trilhas socioeducativas.</p><p style="margin-top:12px;"><strong>Objetivo Central:</strong> Fomentar o convívio comunitário saudável, o respeito às regras, o trabalho de equipa e a disciplina por meio de práticas desportivas e recreativas orientadas.</p>',
+        metodologia: '<ul style="padding-left:20px; margin-top:10px;"><li>Modalidades coletivas (futsal, basquete, vôlei e jogos de cooperação).</li><li>Dinâmicas estruturadas de liderança e gestão de conflitos no campo.</li><li>Festivais recreativos comunitários com foco em integração familiar.</li></ul>',
+        indicadores: '<ul style="padding-left:20px; margin-top:10px;"><li>Número de encontros desportivos realizados.</li><li>Evolução de indicadores socioemocionais (respeito, cooperação e disciplina).</li><li>Taxa de participação e redução de conflitos interpares.</li></ul>',
+        fomento: '<p><strong>Rota de Fomento:</strong> Mecanismos de <strong>Incentivo ao Esporte</strong> e patrocínio corporativo direto.</p><p style="margin-top:10px;"><em>Atenção técnica:</em> Alinhamento ao novo marco regulatório e aos requisitos de capacidade técnica e tempo mínimo de funcionamento exigidos pela legislação federal.</p>'
+      },
+      'guias-trilha': {
+        title: '04 · Guias de Trilha: Formação de Educadores',
+        visao: '<p><strong>Público Prioritário:</strong> Professores da rede pública, educadores sociais e voluntários.</p><p style="margin-top:12px;"><strong>Objetivo Central:</strong> Qualificar continuamente quem atua na linha de frente com os estudantes, gerando um efeito multiplicador sem inflacionar a estrutura física de atendimento.</p>',
+        metodologia: '<ul style="padding-left:20px; margin-top:10px;"><li>Laboratórios de práticas pedagógicas ativas e inovação em sala de aula.</li><li>Módulos sobre mediação de conflitos e acolhimento socioemocional.</li><li>Partilha de experiências entre educadores de diferentes escolas e regiões de Bauru.</li></ul>',
+        indicadores: '<ul style="padding-left:20px; margin-top:10px;"><li>Total de educadores formados e certificados.</li><li>Carga horária acumulada de formação continuada.</li><li>Aplicação prática dos planos de aula nas instituições de origem.</li></ul>',
+        fomento: '<p><strong>Rota de Fomento:</strong> <strong>Investimento Social Privado</strong>, CSR corporativo e doações institucionais diretas.</p><p style="margin-top:10px;"><em>Vantagem:</em> Maior agilidade e autonomia, servindo de alicerce e garantindo a sustentabilidade técnica das outras três trilhas.</p>'
+      }
+    };
+
+    // BASE DE CONHECIMENTO DO WIDGET DE PERGUNTAS RÁPIDAS
+    const knowledgeBase = [
+      {
+        keys: ['situação', 'jurídica', 'cnpj', 'constituição', 'legal', 'estatuto'],
+        answer: 'O Instituto Escalada Educação e Inovação está atualmente em <strong>processo de constituição jurídica</strong>, sem personalidade jurídica própria ou CNPJ ativo. O processo prevê a constituição como associação privada sem fins lucrativos, registro em Cartório de Registro Civil de Pessoas Jurídicas e posterior inscrição nos conselhos competentes.'
+      },
+      {
+        keys: ['sede', 'endereço', 'bauru', 'local', 'onde fica', 'jardim américa'],
+        answer: 'A sede pretendida e informada do Instituto está localizada na <strong>Rua Fuas de Mattos Sabino, nº 9-42, 2º andar, Jardim América — Bauru/SP, CEP 17017-332</strong>.'
+      },
+      {
+        keys: ['apoiar', 'empresas', 'investimento', 'esg', 'patrocínio', 'como participar'],
+        answer: 'As empresas e investidores sociais podem participar por meio de 3 modalidades: <strong>1) Investimento Social Privado</strong> com aporte financeiro direto em projetos; <strong>2) Parcerias Estruturais</strong> (cessão de espaços, materiais ou voluntariado); e <strong>3) Patrocínio Incentivado</strong> (após a devida formalização e aprovação dos projetos nos órgãos competentes).'
+      },
+      {
+        keys: ['trilhas', '4 trilhas', 'quatro trilhas', 'programas', 'projetos'],
+        answer: 'O Instituto organiza o seu impacto em 4 trilhas complementares: <strong>01 · Primeira Subida</strong> (Reforço escolar e orientação no contraturno), <strong>02 · Expedição Criativa</strong> (Oficinas de artes e cultura), <strong>03 · Base de Acampamento</strong> (Desporto educativo e convivência) e <strong>04 · Guias de Trilha</strong> (Formação e qualificação contínua de educadores).'
+      },
+      {
+        keys: ['pec', 'edital', 'cultura bauru', 'rouanet', 'secretaria'],
+        answer: 'Bauru possui o Programa Municipal de Estímulo à Cultura (PEC). O edital de 2026 serviu de referência estratégica e de calendário para estruturar os projetos culturais da Trilha Expedição Criativa, a serem submetidos em edições futuras assim que a instituição estiver formalmente apta.'
+      }
+    ];
+
+    // FUNÇÕES DO MODAL
+    let currentModalTab = 'visao';
+
+    function openProgramModal(programKey) {
+      const p = programData[programKey];
+      if (!p) return;
+
+      document.getElementById('modalTitle').innerText = p.title;
+      document.getElementById('tab-visao').innerHTML = p.visao;
+      document.getElementById('tab-metodologia').innerHTML = p.metodologia;
+      document.getElementById('tab-indicadores').innerHTML = p.indicadores;
+      document.getElementById('tab-fomento').innerHTML = p.fomento;
+
+      switchTab('visao');
+      document.getElementById('programModal').style.display = 'flex';
+    }
+
+    function closeModal() {
+      document.getElementById('programModal').style.display = 'none';
+    }
+
+    function switchTab(tabName) {
+      currentModalTab = tabName;
+      document.querySelectorAll('.modal-tab-btn').forEach(btn => btn.classList.remove('active'));
+      document.querySelectorAll('.modal-tab-content').forEach(content => content.classList.remove('active'));
+
+      const btns = document.querySelectorAll('.modal-tab-btn');
+      if (tabName === 'visao') btns[0].classList.add('active');
+      if (tabName === 'metodologia') btns[1].classList.add('active');
+      if (tabName === 'indicadores') btns[2].classList.add('active');
+      if (tabName === 'fomento') btns[3].classList.add('active');
+
+      const target = document.getElementById('tab-' + tabName);
+      if (target) target.classList.add('active');
+    }
+
+    // FECHAR MODAL AO CLICAR FORA
+    window.addEventListener('click', (e) => {
+      const modal = document.getElementById('programModal');
+      if (e.target === modal) {
+        closeModal();
+      }
+    });
+
+    // FILTRO DE PROGRAMAS
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        const filter = btn.getAttribute('data-filter');
+        const cards = document.querySelectorAll('.program-card');
+
+        cards.forEach(card => {
+          if (filter === 'all' || card.getAttribute('data-category') === filter) {
+            card.style.display = 'flex';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+
+    // WIDGET DE CONSULTA INSTITUCIONAL
+    function setQuestion(text) {
+      document.getElementById('qaInput').value = text;
+      searchAnswer();
+    }
+
+    function searchAnswer() {
+      const query = document.getElementById('qaInput').value.toLowerCase().trim();
+      const answerBox = document.getElementById('qaAnswer');
+
+      if (!query) {
+        answerBox.style.display = 'none';
+        return;
+      }
+
+      let matched = null;
+      for (const item of knowledgeBase) {
+        if (item.keys.some(k => query.includes(k))) {
+          matched = item.answer;
+          break;
+        }
+      }
+
+      if (matched) {
+        answerBox.innerHTML = matched;
+      } else {
+        answerBox.innerHTML = 'Para questões específicas sobre parcerias, formalização ou outros detalhes, envie uma manifestação através do formulário abaixo ou consulte a nossa nota de transparência.';
+      }
+      answerBox.style.display = 'block';
+    }
+
+    // FORMULÁRIO DE CONTACTO
+    function handleFormSubmit(event) {
+      event.preventDefault();
+      const name = document.getElementById('formName').value;
+      const org = document.getElementById('formOrg').value || 'Pessoa Física';
+      
+      alert('Agradecemos a sua manifestação de interesse, ' + name + '! Os dados foram registados e a equipa técnica entrará em contacto assim que o diálogo institucional for aberto.');
+      document.getElementById('contactForm').reset();
+    }
+
+    // MENU MOBILE
+    document.getElementById('menuToggle').addEventListener('click', () => {
+      const nav = document.getElementById('mainNav');
+      if (nav.style.display === 'flex') {
+        nav.style.display = 'none';
+      } else {
+        nav.style.display = 'flex';
+        nav.style.flexDirection = 'column';
+        nav.style.position = 'absolute';
+        nav.style.top = '100%';
+        nav.style.left = '0';
+        nav.style.width = '100%';
+        nav.style.background = '#F7F5F0';
+        nav.style.padding = '20px';
+        nav.style.borderBottom = '2px solid var(--borda)';
+      }
+    });
+  </script>
+</body>
+</html>
